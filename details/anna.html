@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTZHUB - Sports Fest</title>
+    <link rel="stylesheet" href="kavery.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                Eventz Hub
+                </a>
+            <ul class="nav-links">
+    <li><a href="../dashboard/index.html">Home</a></li>
+          <li><a href="../dashboard/index.html#events">Explore</a></li>
+          <li><a href="../dashboard/index.html#organizer">Post Event</a></li>
+          <li><a href="../dashboard/index.html#contact">Contact</a></li>
+    <li class="moon-icon"><strong>🌙</strong></li>
+</ul>
+            
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <h1>Anna Marathon <br>Eventz Hub</h1>
+        <p>Gear up for the most exciting sports events happening in Salem!</p>
+    </section>
+    
+    <section class="events-list">
+        <h2>Featured Sports Event</h2>
+        
+        <div class="event-card sports-fest">
+            <img src="../images/sportse2.jpg" alt="Students playing football at college sports event" class="event-image">
+            
+            <div class="event-details">
+                <h3>Spar 2025: Marathon Championship 🏆</h3>
+                
+                <div class="info-group">
+                    <p class="location">📍 <strong>Location:</strong> Mahatam gahdha stadium</p>
+                    <p class="date">📅 <strong>Date:</strong> October 18, 2025</p>
+                </div>
+
+                <p class="description">
+                    Experience the excitement of endurance and determination at the Kauvery Marathon 2025!
+                    Runners from across Tamil Nadu will race through the scenic routes of Salem, promoting fitness,
+                     unity, and sportsmanship.
+                </p>
+                
+                <a href="booking_page.html" class="booking-btn">Register Your Team</a>
+                
+                <p class="confirm-text">
+                    ✅ <strong>Participation Confirmation:</strong> College ID required for registration; spectators welcome!
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+<!-- Google Map Section -->
+<section class="section map-section" id="map-section">
+  <div class="container">
+    <h2>📍 Find the Event Location</h2>
+    <p>Mahatma Gandhi Stadium, Salem, Tamil Nadu</p>
+
+    <div id="map" style="width:100%; height:400px; border-radius:12px; margin-top:1rem;"></div>
+
+    <div style="text-align:center; margin-top:1rem;">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=11.66026,78.15306"
+         target="_blank"
+         class="btn btn-primary">
+         Get Directions
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Google Map Script -->
+<script>
+  function initMapDetails() {
+    const stadiumLocation = { lat: 11.66026, lng: 78.15306 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 16,
+      center: stadiumLocation,
+    });
+
+    const marker = new google.maps.Marker({
+      position: stadiumLocation,
+      map: map,
+      title: "Mahatma Gandhi Stadium - Event Location",
+    });
+  }
+</script>
+
+<!-- Load Google Maps API -->
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsGMqDnG8dOaCGWWgnqVqzX0hdFhFO6fk&callback=initMapDetails">
+</script>
+
+
+</body>
+</html>

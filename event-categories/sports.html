@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sports Event - Eventz Hub</title>
+    <link rel="stylesheet" href="../dashboard/style.css" />
+  </head>
+  <body>
+    <!-- Navigation (same as home page) -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-brand">
+          <span class="logo-icon">🎉</span>
+          <span class="logo-text">Eventz Hub</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../dashboard/index.html">Home</a></li>
+          <li><a href="../dashboard/index.html#events">Explore</a></li>
+          <li><a href="../dashboard/index.html#organizer">Post Event</a></li>
+          <li><a href="../dashboard/index.html#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="moon">🌙</span>
+          <span class="sun">☀</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Category Hero -->
+    <section
+      class="hero"
+      style="background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);"
+    >
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">🏆 Sports Events HappeningSalem</h1>
+          <p class="hero-subtitle">
+            Explore the most popular sports events happening in
+            Salem!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Events -->
+    <section class="section upcoming-events">
+      <div class="container">
+        <div class="section-header">
+          <h2>Upcoming Sports Events</h2>
+          <div class="sort-controls">
+            <button class="sort-btn active">All</button>
+            <button class="sort-btn">This Month</button>
+            <button class="sort-btn">Free</button>
+            <button class="sort-btn">Popular</button>
+          </div>
+        </div>
+
+        <div class="events-grid">
+          <div class="event-card">
+            <div class="event-image" style="
+            background-image: url('../images/sportse1.jpg'); 
+            background-size: cover; 
+            background-position: center;">
+              <span class="event-badge">Exclusive</span>
+            </div>
+            <div class="event-content">
+              <h3>Kauvery Marathon Salem 2025 (5th Edition)</h3>
+              <p class="event-date">📅 April 10, 2025</p>
+              <p class="event-location">📍 Mahatma Gandhi Stadium, Salem</p>
+              <a href="../details/kavery.html"><button class="btn btn-small btn-primary">View Details</button></a>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="event-image" style="
+            background-image: url('../images/sportse2.jpg'); 
+            background-size: cover; 
+            background-position: center;">
+              <span class="event-badge trending">Trending</span>
+            </div>
+            <div class="event-content">
+              <h3>Anna Marathon Run</h3>
+              <p class="event-date">📅 October 18, 2025</p>
+              <p class="event-location">📍 Mahatma Gandhi Stadium, Salem</p>
+              <a href="../details/anna.html"><button class="btn btn-small btn-primary">View Details</button></a>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="event-image" style="
+            background-image: url('../images/sportse3.jpg'); 
+            background-size: cover; 
+            background-position: center;">
+              <span class="event-badge">Free Entry</span>
+            </div>
+            <div class="event-content">
+              <h3>District Level Chief Minister's Trophy Games 2025-2026</h3>
+              <p class="event-date">📅 April 25, 2025</p>
+              <p class="event-location">📍 Mahatma Gandhi Stadium, Salem</p>
+              <button class="btn btn-small btn-primary">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Gallery -->
+    <section class="section gallery-section">
+      <div class="container">
+        <h2>💐 Sports Moments</h2>
+        <p class="section-subtitle">Highliights from sportsfest</p>
+        <div class="gallery-grid">
+          <div class="gallery-item" style="
+        background-image: url('../images/sportsm1.jpg');
+        background-size: cover; 
+        background-position: center;"></div>
+          <div class="gallery-item" style="
+        background-image: url('../images/sportsm2.png');
+        background-size: cover; 
+        background-position: center;"></div>
+          <div class="gallery-item" style="
+        background-image: url('../images/sportsm3.jpg');
+        background-size: cover; 
+        background-position: center;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section organizer-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Planning a Sports Event?</h2>
+          <p>Post it here and reach thousands of people in Salem!</p>
+          <a href="../addevent/index.html"><button class="btn btn-large btn-white">Add Event</button></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>Copyright © 2025 Eventz Hub. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

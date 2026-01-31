@@ -1,0 +1,217 @@
+/* Basic Reset and Variables */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --primary-color: #a81616; /* The yellow/orange color from your image */
+    --secondary-color: #333;
+    --text-color: #555;
+    --booking-color: #e63946;
+}
+
+/* ============================
+   1. NAVIGATION BAR STYLING
+   ============================
+*/
+
+.main-header {
+    background-color: white; /* Ensures the navbar is visible over the background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: sticky; /* Keeps the navbar at the top when scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the content */
+    padding: 15px 20px;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 30px; /* Adjust size as needed */
+    height: 30px;
+    margin-right: 8px;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.moon-icon {
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* ============================
+   2. HERO SECTION STYLING (from your image)
+   ============================
+*/
+
+.hero-section {
+    background: linear-gradient(135deg, #000000, var(--primary-color));
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* ============================
+   3. EVENT CARD STYLING
+   ============================
+*/
+
+.events-list {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.events-list h2 {
+    text-align: center;
+    font-size: 2em;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.event-card {
+    display: flex;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 40px;
+    transition: transform 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.event-image {
+    width: 40%; 
+    height: auto;
+    object-fit: cover;
+}
+
+.event-details {
+    padding: 30px;
+    width: 60%;
+}
+
+.event-details h3 {
+    color: var(--booking-color);
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.info-group {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Booking Button */
+.booking-btn {
+    display: inline-block;
+    background-color: var(--booking-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.booking-btn:hover {
+    background-color: #c9303d; /* slightly darker red */
+}
+
+/* Confirmation Text */
+.confirm-text {
+    margin-top: 15px;
+    color: green;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/* Media Query for smaller screens (e.g., mobile view) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        padding-top: 10px;
+        justify-content: center;
+    }
+    
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .event-card {
+        flex-direction: column; /* Stacks image and details vertically */
+    }
+
+    .event-image, .event-details {
+        width: 100%; /* Take up full width */
+    }
+}
