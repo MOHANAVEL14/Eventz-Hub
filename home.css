@@ -235,3 +235,41 @@ a:hover {
     object-fit: cover; /* Ensures the image covers the area without distorting */
     border-radius: 50%; /* Gives the image a perfect circular mask */
 }
+
+/*logo */
+.site-header {
+            background-color: #333; /* Dark background for contrast */
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center; /* Vertically centers logo and text */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Styling for the link wrapping the logo */
+        .logo-link {
+            display: inline-block;
+            margin-right: 15px; /* Space between logo and site title */
+        }
+
+        /* THE CRITICAL PART: Making the logo circular */
+        .circle-logo {
+            /* 1. Define a fixed width and height that are equal (a square) */
+            width: 60px;
+            height: 60px;
+            
+            /* 2. Turn the square into a circle */
+            border-radius: 50%;
+            
+            /* 3. Ensure the image fills the circle without stretching */
+            object-fit: cover; 
+            
+            /* Optional: Add a border around the circle */
+            border: 2px solid #f4f4f4;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }

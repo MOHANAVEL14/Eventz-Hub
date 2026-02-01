@@ -171,3 +171,58 @@ document.querySelector('.theme-toggle').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 */
+
+// --- THEME TOGGLE ---
+const themeBtn = document.querySelector('.theme-toggle'); // Match the class in your HTML
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+}
+
+// --- SIDEBAR MENU LOGIC ---
+// --- SIDEBAR MENU LOGIC ---
+const initMenu = () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeBtn = document.getElementById('closeBtn');
+    const overlay = document.getElementById('menuOverlay');
+    const menuLinks = document.querySelectorAll('.menu-content a'); // Select all links
+
+    if (!menuBtn || !sideMenu || !overlay) return;
+
+    // Function to close the menu
+    const closeMenu = () => {
+        sideMenu.classList.remove('open');
+        overlay.classList.remove('active');
+    };
+
+    const toggleSidebar = (e) => {
+        if (e) e.preventDefault();
+        if (window.innerWidth <= 768) {
+            sideMenu.classList.toggle('open');
+            overlay.classList.toggle('active');
+        } else {
+            window.location.href = "../profile/index.html";
+        }
+    };
+
+    // 1. Open/Toggle with the main button
+    menuBtn.addEventListener('click', toggleSidebar);
+
+    // 2. Close when clicking the 'X' or the dark overlay
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    if (overlay) overlay.addEventListener('click', closeMenu);
+
+    // 3. NEW: Close when clicking any link inside the menu
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMenu();
+            // The browser will naturally follow the href link after this
+        });
+    });
+};
+
+initMenu();

@@ -42,6 +42,33 @@ body.dark-mode {
   --border-color: #374151;
 }
 
+/* General Button Styles */
+.profile-menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Mobile View (Swap Profile for Menu) */
+@media (max-width: 768px) {
+    .profile-icon {
+        display: none; /* Hide profile on mobile */
+    }
+    .menu-icon {
+        display: inline-block !important; /* Show hamburger menu */
+    }
+    
+    /* Optional: Hide theme toggle on very small screens or move it into the menu */
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -1220,4 +1247,192 @@ html {
     flex-direction: column;
     gap: 10px;
   }
+}
+
+
+
+/* Sidebar Base */
+.sidemenu {
+    position: fixed;
+    top: 0;
+    left: -280px; /* Fully off-screen */
+    width: 250px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    z-index: 10000; /* Ensure it is above the navbar */
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 20px;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Transitioning the 'right' property */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Sidebar Open State */
+.sidemenu.open {
+    right: 0 !important;
+    left: auto
+}
+
+/* Overlay Base */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: none;
+    backdrop-filter: blur(3px); /* Makes it look modern */
+}
+
+.overlay.active {
+    display: block !important;
+}
+
+/* Icon Swap Logic */
+@media (max-width: 768px) {
+    .profile-icon { display: none !important; }
+    .menu-icon { display: inline-block !important; }
+}
+
+@media (min-width: 769px) {
+    .profile-icon { display: inline-block !important; }
+    .menu-icon { display: none !important; }
+}
+/* --- Global Variables for Easy Customization --- */
+:root {
+    --side-menu-bg: #1a1a1a;
+    --side-menu-width: 280px;
+    --accent-color: #f39c12;
+    --text-color: #ffffff;
+    --overlay-color: rgba(0, 0, 0, 0.7);
+}
+
+/* --- Sidebar Base Style --- */
+.sidemenu {
+    position: fixed;
+    top: 0;
+    right: calc(var(--side-menu-width) * -1); /* Fully hidden to the right */
+    width: var(--side-menu-width);
+    height: 100vh;
+    background-color: var(--side-menu-bg);
+    color: var(--text-color);
+    z-index: 10000; /* Stays above navbar and content */
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* --- State: Menu Open --- */
+.sidemenu.open {
+    right: 0 !important; /* Slide into view */
+}
+
+/* --- Header Section --- */
+.menu-header {
+    padding: 25px 20px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+/* --- Close Button --- */
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+/* --- Menu Content & Links --- */
+.menu-content {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-content a {
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.menu-content a i {
+    width: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Hover Effect: Slide text slightly and change color */
+.menu-content a:hover {
+    background-color: #2c2c2c;
+    color: var(--accent-color);
+    border-left: 3px solid var(--accent-color);
+    padding-left: 30px;
+}
+
+/* --- Separator and Logout --- */
+.menu-content hr {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 15px 20px;
+}
+
+.logout-link {
+    color: #e74c3c !important;
+}
+
+.logout-link:hover {
+    background-color: rgba(231, 76, 60, 0.1) !important;
+    border-left: 3px solid #e74c3c !important;
+}
+
+/* --- Background Overlay --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--overlay-color);
+    backdrop-filter: blur(4px); /* Modern blur effect */
+    z-index: 9999; /* Just behind the sidebar */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.overlay.active {
+    display: block !important;
+    opacity: 1;
+}
+
+/* --- Mobile Icon Logic (Optional but Recommended) --- */
+@media (max-width: 768px) {
+    .profile-icon { display: none !important; }
+    .menu-icon { display: inline-block !important; }
 }

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HappeningSalem - Discover All Events in Salem</title>
+    <link rel="icon" type="image/png" href="../images/icon.png">
+    <title>Eventz Hub</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -21,13 +22,34 @@
           <li><a href="#organizer">Post Event</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="theme-toggle" aria-label="Toggle dark mode">
+        <!-- <button class="theme-toggle" aria-label="Toggle dark mode">
           <span class="moon">🌙</span>
           <span class="sun">☀️</span>
+        </button> -->
+        <div class="nav-action-wrapper">
+        <button class="profile-menu-btn" id="menuBtn">
+            <span class="profile-icon">👤</span>
+            <span class="menu-icon" style="display: none;">☰</span>
         </button>
+        </div>
       </div>
     </nav>
+    <div id="sideMenu" class="sidemenu">
+        <button class="close-btn" id="closeBtn" aria-label="Close menu">&times;</button>
+        <div class="menu-header">
+            <h3>Menu</h3>
+        </div>
+        <div class="menu-content">
+            <a href="../dashboard/index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="#events"><i class="fas fa-compass"></i> Explore</a>
+            <a href="#organizer"><i class="fas fa-plus-circle"></i> Post Event</a>
+            <a href="../profile/index.html"><i class="fas fa-user"></i> Profile</a>
+            <hr>
+            <a href="../login/login.html" id="logoutBtn" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </div>
 
+    <div id="menuOverlay" class="overlay"></div>
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="container">

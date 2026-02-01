@@ -2,10 +2,13 @@
 
 // 1. Your Firebase Configuration (Get this from your Firebase Project Settings)
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  // ... other keys
+  apiKey: "AIzaSyBloB9afFkfiMnxjQFH5N0WCehAsqWJ0oc",
+  authDomain: "event-hub-439ab.firebaseapp.com",
+  projectId: "event-hub-439ab",
+  storageBucket: "event-hub-439ab.firebasestorage.app",
+  messagingSenderId: "1099014263723",
+  appId: "1:1099014263723:web:034962c3e732fe48c038ee",
+  measurementId: "G-5829WVGYZB"
 };
 
 // Initialize Firebase

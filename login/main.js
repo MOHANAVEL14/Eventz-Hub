@@ -129,22 +129,41 @@ signUpBtn.addEventListener('click', (e) => {
 const loginBtn = document.getElementById('submitlogin');
 loginBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  const email=document.getElementById('lemail').value;
+  const email=document.getElementById('lemail').value.trim();
   const password=document.getElementById('lpassword').value;
+  if (!email || !password) {
+    alert("Please fill in all fields.");
+    return;
+  }
   signInWithEmailAndPassword(auth,email,password)
   .then((userCredential)=>{
-    // Signed in
+    //Signed in
     const user=userCredential.user;
     console.log("User signed in:", user);
     alert("Login successful!");
     window.location.href="../dashboard/index.html";
   })
-  .catch((error)=>{
-    const errorCode=error.code;
-    if(errorCode==="auth/wrong-password"){
-      alert("Incorrect password. Please try again.");
-    }else{
+  .catch((error) => {
+    const errorCode = error.code;
+    console.error("Actual Firebase Error Code:", errorCode); // Look at your console to see this!
+
+    //Modern Firebase combined error check
+    if (errorCode === "auth/invalid-credential") {
+      alert("Invalid email or password. Please try again.");
+    } 
+    //Compatibility for older projects
+    if (errorCode === "auth/user-not-found") {
       alert("Account not found. Please sign up first.");
+    } 
+    else if (errorCode === "auth/wrong-password") {
+      alert("Incorrect password.");
+    }
+    // Handle lockout from too many attempts
+    else if (errorCode === "auth/too-many-requests") {
+      alert("Too many failed attempts. Please try again later.");
+    }
+    else {
+      alert("Error: " + error.message);
     }
   });
 });
