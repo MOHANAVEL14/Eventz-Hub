@@ -167,3 +167,9 @@ loginBtn.addEventListener('click', (e) => {
     }
   });
 });
+
+// Clear fields on page load
+window.addEventListener('load', () => {
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => input.value = '');
+});

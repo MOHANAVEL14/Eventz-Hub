@@ -1,108 +1,110 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="../images/icon.png">
-    <title>Eventz Hub</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="container">
-        <div class="nav-brand">
-          <span class="logo-icon">🎉</span>
-          <span class="logo-text">Eventz Hub</span>
-        </div>
-        <ul class="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#events">Explore</a></li>
-          <li><a href="#organizer">Post Event</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <!-- <button class="theme-toggle" aria-label="Toggle dark mode">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <title>Eventz Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <span class="logo-icon">🎉</span>
+        <span class="logo-text">Eventz Hub</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#events">Explore</a></li>
+        <li><a href="#organizer">Post Event</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- <button class="theme-toggle" aria-label="Toggle dark mode">
           <span class="moon">🌙</span>
           <span class="sun">☀️</span>
         </button> -->
-        <div class="nav-action-wrapper">
+      <div class="nav-action-wrapper">
         <button class="profile-menu-btn" id="menuBtn">
-            <span class="profile-icon">👤</span>
-            <span class="menu-icon" style="display: none;">☰</span>
+          <span class="profile-icon">👤</span>
+          <span class="menu-icon" style="display: none;">☰</span>
         </button>
+      </div>
+    </div>
+  </nav>
+  <div id="sideMenu" class="sidemenu">
+    <div class="menu-header">
+      <h3>Menu</h3>
+      <button class="close-btn" id="closeBtn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="menu-content">
+      <a href="../dashboard/index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="#events"><i class="fas fa-compass"></i> Explore</a>
+      <a href="#organizer"><i class="fas fa-plus-circle"></i> Post Event</a>
+      <a href="../profile/index.html"><i class="fas fa-user"></i> Profile</a>
+      <hr>
+      <a href="../login/login.html" id="logoutBtn" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </div>
+
+  <div id="menuOverlay" class="overlay"></div>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Discover All Events Happening in Salem!</h1>
+        <p class="hero-subtitle">Weddings, Parties, Concerts, College Fests & More — All in One Place.</p>
+
+        <!-- Event Search Section -->
+        <section class="search-section">
+          <div class="container">
+            <h2>🔍 Find Your Event</h2>
+            <form id="eventSearchForm">
+              <input type="text" id="searchLocation" placeholder="Location (e.g., Salem)" />
+              <input type="date" id="searchDate" placeholder="Event Date" />
+              <select id="searchCategory">
+                <option value="">Select Category</option>
+                <option value="../event-categories/sports.html">Sports Fest</option>
+                <option value="../event-categories/birthday.html">Private Party</option>
+                <option value="../event-categories/cultural.html">College & Cultural Fests</option>
+                <option value="../event-categories/concert.html">Concerts & Shows</option>
+                <option value="../event-categories/corporate.html">Corporate Events</option>
+                <option value="../event-categories/workshop.html">Workshops & Meetups</option>
+              </select>
+              <button type="submit">Search</button>
+            </form>
+          </div>
+        </section>
+
+        <div class="hero-cta">
+          <a href="#events" class="btn btn-large btn-primary">Explore Events</a>
+          <a href="#organizer" class="btn btn-large btn-secondary">Post Your Event</a>
         </div>
       </div>
-    </nav>
-    <div id="sideMenu" class="sidemenu">
-        <button class="close-btn" id="closeBtn" aria-label="Close menu">&times;</button>
-        <div class="menu-header">
-            <h3>Menu</h3>
-        </div>
-        <div class="menu-content">
-            <a href="../dashboard/index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="#events"><i class="fas fa-compass"></i> Explore</a>
-            <a href="#organizer"><i class="fas fa-plus-circle"></i> Post Event</a>
-            <a href="../profile/index.html"><i class="fas fa-user"></i> Profile</a>
-            <hr>
-            <a href="../login/login.html" id="logoutBtn" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
-        </div>
-    </div>
 
-    <div id="menuOverlay" class="overlay"></div>
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">Discover All Events Happening in Salem!</h1>
-          <p class="hero-subtitle">Weddings, Parties, Concerts, College Fests & More — All in One Place.</p>
-
-          <!-- Event Search Section -->
-  <section class="search-section">
-    <div class="container">
-      <h2>🔍 Find Your Event</h2>
-      <form id="eventSearchForm">
-        <input type="text" id="searchLocation" placeholder="Location (e.g., Salem)" />
-        <input type="date" id="searchDate" placeholder="Event Date" />
-        <select id="searchCategory">
-          <option value="">Select Category</option>
-          <option value="../event-categories/sports.html">Sports Fest</option>
-          <option value="../event-categories/birthday.html">Private Party</option>
-          <option value="../event-categories/cultural.html">College & Cultural Fests</option>
-          <option value="../event-categories/concert.html">Concerts & Shows</option>
-          <option value="../event-categories/corporate.html">Corporate Events</option>
-          <option value="../event-categories/workshop.html">Workshops & Meetups</option>
-        </select>
-        <button type="submit">Search</button>
-      </form>
+      <div class="stats-counter">
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Events Listed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2000+</div>
+          <div class="stat-label">Active Users</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">150+</div>
+          <div class="stat-label">Organizers</div>
+        </div>
+      </div>
     </div>
   </section>
 
-          <div class="hero-cta">
-            <a href="#events" class="btn btn-large btn-primary">Explore Events</a>
-            <a href="#organizer" class="btn btn-large btn-secondary">Post Your Event</a>
-          </div>
-        </div>
-
-        <div class="stats-counter">
-          <div class="stat-item">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">Events Listed</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">2000+</div>
-            <div class="stat-label">Active Users</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">150+</div>
-            <div class="stat-label">Organizers</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Upcoming Events -->
-    <section class="section upcoming-events" id="events">
+  <!-- Upcoming Events -->
+  <section class="section upcoming-events" id="events">
     <div class="container">
       <div class="section-header">
         <h2>🗓 Upcoming Events</h2>
@@ -120,8 +122,8 @@
             background-image: url('../images/musich.png'); 
             background-size: cover; 
             background-position: center;">
-        <span class="event-badge">This Weekend</span>
-    </div>
+            <span class="event-badge">This Weekend</span>
+          </div>
           <div class="event-content">
             <h3>Salem Music Fest 2025</h3>
             <p class="event-date">📅 March 15, 2025</p>
@@ -158,7 +160,7 @@
         </div>
 
         <div class="event-card" data-category="popular">
-            <div class="event-image" style="
+          <div class="event-image" style="
             background-image: url('../images/sportse1.jpg'); 
             background-size: cover; 
             background-position: center;">
@@ -174,9 +176,9 @@
       </div>
     </div>
   </section>
- <section class="section upcoming-events" id="events">
+  <section class="section upcoming-events" id="events">
+    <div class="container">
       <div class="container">
-        <div class="container">
         <div class="section-header">
           <h2>🗓 User Added Events</h2>
           <div class="sort-controls">
@@ -186,320 +188,332 @@
             <button class="sort-btn">Popular</button>
           </div>
         </div>
-       <div class="events-grid" id="dynamicEventsGrid">
-        <p style="text-align: center; color: var(--text-secondary);">Loading events from database...</p>
+        <div class="events-grid" id="dynamicEventsGrid">
+          <p style="text-align: center; color: var(--text-secondary);">Loading events from database...</p>
+        </div>
       </div>
-    </div>
-</section>
+  </section>
 
-    <!-- Trending Events -->
-    <section class="section trending-section">
-      <div class="container">
-        <h2 class="trending-title">🔥 Trending This Week in Salem</h2>
-        <div class="trending-grid">
-          <div class="trending-card">
-            <div class="trending-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);"></div>
-            <div class="trending-info">
-              <h3>Live DJ Night</h3>
-              <p>Tonight at 8 PM</p>
-              <span class="trending-views">👁 2,543 views</span>
-            </div>
+  <!-- Trending Events -->
+  <section class="section trending-section">
+    <div class="container">
+      <h2 class="trending-title">🔥 Trending This Week in Salem</h2>
+      <div class="trending-grid">
+        <div class="trending-card">
+          <div class="trending-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);"></div>
+          <div class="trending-info">
+            <h3>Live DJ Night</h3>
+            <p>Tonight at 8 PM</p>
+            <span class="trending-views">👁 2,543 views</span>
           </div>
-          <div class="trending-card">
-            <div class="trending-image" style="background: linear-gradient(135deg, #48dbfb 0%, #0abde3 100%);"></div>
-            <div class="trending-info">
-              <h3>Tech Conference</h3>
-              <p>Tomorrow 9 AM</p>
-              <span class="trending-views">👁 1,892 views</span>
-            </div>
+        </div>
+        <div class="trending-card">
+          <div class="trending-image" style="background: linear-gradient(135deg, #48dbfb 0%, #0abde3 100%);"></div>
+          <div class="trending-info">
+            <h3>Tech Conference</h3>
+            <p>Tomorrow 9 AM</p>
+            <span class="trending-views">👁 1,892 views</span>
           </div>
-          <div class="trending-card">
-            <div class="trending-image" style="background: linear-gradient(135deg, #ff9ff3 0%, #feca57 100%);"></div>
-            <div class="trending-info">
-              <h3>Food Festival</h3>
-              <p>This Saturday</p>
-              <span class="trending-views">👁 3,124 views</span>
-            </div>
+        </div>
+        <div class="trending-card">
+          <div class="trending-image" style="background: linear-gradient(135deg, #ff9ff3 0%, #feca57 100%);"></div>
+          <div class="trending-info">
+            <h3>Food Festival</h3>
+            <p>This Saturday</p>
+            <span class="trending-views">👁 3,124 views</span>
           </div>
         </div>
       </div>
-    </section>
-
-   <!-- Categories -->
-<section class="section categories-section">
-  <div class="container">
-    <h2>🎉 Event Categories</h2>
-    <div class="categories-grid">
-      <a href="../event-categories/sports.html" class="category-card" style="background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);">
-        <div class="category-icon">🏆</div>
-        <h3>Sports Fest</h3>
-      </a>
-
-      <a href="../event-categories/party.html" class="category-card" style="background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);">
-        <div class="category-icon">🎂</div>
-        <h3>Birthdays & Private Parties</h3>
-      </a>
-
-      <a href="../event-categories/culturals.html" class="category-card" style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);">
-        <div class="category-icon">🏫</div>
-        <h3>College & Cultural Fests</h3>
-      </a>
-
-      <a href="../event-categories/concert.html" class="category-card" style="background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);">
-        <div class="category-icon">🎤</div>
-        <h3>Concerts & Shows</h3>
-      </a>
-
-      <a href="../event-categories/corporate.html" class="category-card" style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);">
-        <div class="category-icon">🏢</div>
-        <h3>Corporate Events</h3>
-      </a>
-
-      <a href="../event-categories/workshop.html" class="category-card" style="background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);">
-        <div class="category-icon">🤝</div>
-        <h3>Workshops & Meetups</h3>
-      </a>
     </div>
-  </div>
-</section>
+  </section>
 
-    <!-- AI Recommendations -->
-    <section class="section recommendations-section">
-      <div class="container">
-        <h2>🧠 Recommended for You</h2>
-        <p class="section-subtitle">Because you viewed Music Fest 2025...</p>
-        <div class="recommendations-grid">
-          <div class="recommendation-card">
-            <div class="recommendation-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-            <h4>DJ Night @ Grand Hall</h4>
-            <p>March 25, 2025</p>
+  <!-- Categories -->
+  <section class="section categories-section">
+    <div class="container">
+      <h2>🎉 Event Categories</h2>
+      <div class="categories-grid">
+        <a href="../event-categories/sports.html" class="category-card"
+          style="background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);">
+          <div class="category-icon">🏆</div>
+          <h3>Sports Fest</h3>
+        </a>
+
+        <a href="../event-categories/party.html" class="category-card"
+          style="background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);">
+          <div class="category-icon">🎂</div>
+          <h3>Birthdays & Private Parties</h3>
+        </a>
+
+        <a href="../event-categories/culturals.html" class="category-card"
+          style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);">
+          <div class="category-icon">🏫</div>
+          <h3>College & Cultural Fests</h3>
+        </a>
+
+        <a href="../event-categories/concert.html" class="category-card"
+          style="background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);">
+          <div class="category-icon">🎤</div>
+          <h3>Concerts & Shows</h3>
+        </a>
+
+        <a href="../event-categories/corporate.html" class="category-card"
+          style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);">
+          <div class="category-icon">🏢</div>
+          <h3>Corporate Events</h3>
+        </a>
+
+        <a href="../event-categories/workshop.html" class="category-card"
+          style="background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);">
+          <div class="category-icon">🤝</div>
+          <h3>Workshops & Meetups</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Recommendations -->
+  <section class="section recommendations-section">
+    <div class="container">
+      <h2>🧠 Recommended for You</h2>
+      <p class="section-subtitle">Because you viewed Music Fest 2025...</p>
+      <div class="recommendations-grid">
+        <div class="recommendation-card">
+          <div class="recommendation-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
           </div>
-          <div class="recommendation-card">
-            <div class="recommendation-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-            <h4>Rock Concert Live</h4>
-            <p>April 2, 2025</p>
+          <h4>DJ Night @ Grand Hall</h4>
+          <p>March 25, 2025</p>
+        </div>
+        <div class="recommendation-card">
+          <div class="recommendation-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
           </div>
-          <div class="recommendation-card">
-            <div class="recommendation-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-            <h4>Indie Music Night</h4>
-            <p>March 28, 2025</p>
+          <h4>Rock Concert Live</h4>
+          <p>April 2, 2025</p>
+        </div>
+        <div class="recommendation-card">
+          <div class="recommendation-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
           </div>
+          <h4>Indie Music Night</h4>
+          <p>March 28, 2025</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- How It Works -->
-<section class="section how-it-works">
-  <div class="container">
-    <h2>🧾 How It Works</h2>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <div class="step-icon">🔍</div>
-        <h3>Find an Event</h3>
-        <p>Browse through hundreds of events happening in Salem</p>
-      </div>
+  <!-- How It Works -->
+  <section class="section how-it-works">
+    <div class="container">
+      <h2>🧾 How It Works</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-icon">🔍</div>
+          <h3>Find an Event</h3>
+          <p>Browse through hundreds of events happening in Salem</p>
+        </div>
 
-      
 
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <div class="step-icon">🎉</div>
-        <h3>Enjoy & Share!</h3>
-        <p>Attend the event and share your experience</p>
-      </div>
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <div class="step-icon">📊</div>
-        <h3>Event Dashboard</h3>
-        <p>Our dashboard helps organizers track event engagement and popularity at a glance.</p>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-icon">🎉</div>
+          <h3>Enjoy & Share!</h3>
+          <p>Attend the event and share your experience</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-icon">📊</div>
+          <h3>Event Dashboard</h3>
+          <p>Our dashboard helps organizers track event engagement and popularity at a glance.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-    <!-- Event Gallery -->
-    <section class="section gallery-section">
-      <div class="container">
-        <h2>📸 Event Highlights</h2>
-        <p class="section-subtitle">See what's happening around you!</p>
-        <div class="gallery-grid">
-          <div class="gallery-item" style="
+  <!-- Event Gallery -->
+  <section class="section gallery-section">
+    <div class="container">
+      <h2>📸 Event Highlights</h2>
+      <p class="section-subtitle">See what's happening around you!</p>
+      <div class="gallery-grid">
+        <div class="gallery-item" style="
             background-image: url('../images/sportse2.jpg'); 
             background-size: cover; 
             background-position: center; "></div>
-          <div class="gallery-item" style="
+        <div class="gallery-item" style="
             background-image: url('../images/music1.png'); 
             background-size: cover; 
             background-position: center; "></div>
-          <div class="gallery-item" style="
+        <div class="gallery-item" style="
             background-image: url('../images/workshope2.jpg'); 
             background-size: cover; 
             background-position: center; "></div>
-          <div class="gallery-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
-          <div class="gallery-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
-          <div class="gallery-item" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
-        </div>
+        <div class="gallery-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+        <div class="gallery-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+        <div class="gallery-item" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Testimonials -->
-    <section class="section testimonials-section">
-      <div class="container">
-        <h2>💬 What People Are Saying</h2>
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <p class="testimonial-text">"I found my college fest here — super easy to book! Best platform for Salem events."</p>
-            <div class="testimonial-author">
-              <strong>Meena</strong>
-              <span>Salem</span>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">"As an event organizer, this platform helped me reach thousands of people in Salem!"</p>
-            <div class="testimonial-author">
-              <strong>Rajesh Kumar</strong>
-              <span>Event Organizer</span>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">"Never miss out on events anymore. The notifications keep me updated on everything happening!"</p>
-            <div class="testimonial-author">
-              <strong>Priya Sharma</strong>
-              <span>Salem</span>
-            </div>
+  <!-- Testimonials -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <h2>💬 What People Are Saying</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"I found my college fest here — super easy to book! Best platform for Salem
+            events."</p>
+          <div class="testimonial-author">
+            <strong>Meena</strong>
+            <span>Salem</span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Organizer CTA -->
-    <section class="section organizer-cta" id="organizer">
-      <div class="container">
-        <div class="cta-content">
-          <h2>🧑‍💻 Are you hosting an event in Salem?</h2>
-          <p>Post it here for free and reach thousands of people!</p>
-          <a href="../addevent/index.html"><button class="btn btn-large btn-white">Add Event</button></a>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"As an event organizer, this platform helped me reach thousands of people in
+            Salem!"</p>
+          <div class="testimonial-author">
+            <strong>Rajesh Kumar</strong>
+            <span>Event Organizer</span>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- News Section -->
-    <section class="section news-section">
-      <div class="container">
-        <h2>📰 Latest News & Updates</h2>
-        <div class="news-grid">
-          <div class="news-card">
-            <div class="news-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-            <div class="news-content">
-              <span class="news-date">March 10, 2025</span>
-              <h3>Top 10 Wedding Venues in Salem</h3>
-              <p>Discover the most beautiful and affordable wedding venues in Salem for your special day.</p>
-              <a href="#" class="read-more">Read More →</a>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-            <div class="news-content">
-              <span class="news-date">January 8, 2026</span>
-              <h3>Upcoming Pongal Events 2026</h3>
-              <p>Get ready for the festival season with these amazing Pongal celebrations happening in Salem.</p>
-              <a href="#" class="read-more">Read More →</a>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-            <div class="news-content">
-              <span class="news-date">March 5, 2025</span>
-              <h3>How to Plan the Perfect Event</h3>
-              <p>Expert tips and tricks for organizing successful events that your guests will love.</p>
-              <a href="#" class="read-more">Read More →</a>
-            </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Never miss out on events anymore. The notifications keep me updated on everything
+            happening!"</p>
+          <div class="testimonial-author">
+            <strong>Priya Sharma</strong>
+            <span>Salem</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Newsletter -->
-    <section class="section newsletter-section">
-      <div class="container">
-        <div class="newsletter-content">
-          <h2>📧 Stay Updated!</h2>
-          <p>Get weekly updates on Salem's hottest events delivered to your inbox.</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email address" class="newsletter-input">
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-          </form>
+  <!-- Organizer CTA -->
+  <section class="section organizer-cta" id="organizer">
+    <div class="container">
+      <div class="cta-content">
+        <h2>🧑‍💻 Are you hosting an event in Salem?</h2>
+        <p>Post it here for free and reach thousands of people!</p>
+        <a href="../addevent/index.html"><button class="btn btn-large btn-white">Add Event</button></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section class="section news-section">
+    <div class="container">
+      <h2>📰 Latest News & Updates</h2>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+          <div class="news-content">
+            <span class="news-date">March 10, 2025</span>
+            <h3>Top 10 Wedding Venues in Salem</h3>
+            <p>Discover the most beautiful and affordable wedding venues in Salem for your special day.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+          <div class="news-content">
+            <span class="news-date">January 8, 2026</span>
+            <h3>Upcoming Pongal Events 2026</h3>
+            <p>Get ready for the festival season with these amazing Pongal celebrations happening in Salem.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+          <div class="news-content">
+            <span class="news-date">March 5, 2025</span>
+            <h3>How to Plan the Perfect Event</h3>
+            <p>Expert tips and tricks for organizing successful events that your guests will love.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-column">
-            <div class="footer-brand">
-              <span class="logo-icon">🎉</span>
-              <span class="logo-text">Eventz Hub</span>
-            </div>
-            <p class="footer-description">Your one-stop platform for discovering all events happening in Salem.</p>
-            <div class="social-links">
-              <a href="#" class="social-icon">📘</a>
-              <a href="#" class="social-icon">📷</a>
-              <a href="#" class="social-icon">🐦</a>
-              <a href="#" class="social-icon">▶️</a>
-            </div>
+  <!-- Newsletter -->
+  <section class="section newsletter-section">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>📧 Stay Updated!</h2>
+        <p>Get weekly updates on Salem's hottest events delivered to your inbox.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email address" class="newsletter-input">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div class="footer-brand">
+            <span class="logo-icon">🎉</span>
+            <span class="logo-text">Eventz Hub</span>
           </div>
-          <div class="footer-column">
-            <h4>Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#events">Explore Events</a></li>
-              <li><a href="#organizer">Post Event</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Categories</h4>
-            <ul class="footer-links">
-              <li><a href="#">Weddings</a></li>
-              <li><a href="#">Concerts</a></li>
-              <li><a href="#">College Fests</a></li>
-              <li><a href="#">Workshops</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Contact Info</h4>
-            <ul class="footer-contact">
-              <li>📧 hello@happeningsalem.com</li>
-              <li>📞 +91 98765 43210</li>
-              <li>📍 123 Main Street, Salem, TN</li>
-            </ul>
+          <p class="footer-description">Your one-stop platform for discovering all events happening in Salem.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon">📘</a>
+            <a href="#" class="social-icon">📷</a>
+            <a href="#" class="social-icon">🐦</a>
+            <a href="#" class="social-icon">▶️</a>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>Copyright © 2025 HappeningSalem. All rights reserved.</p>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Explore Events</a></li>
+            <li><a href="#organizer">Post Event</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Categories</h4>
+          <ul class="footer-links">
+            <li><a href="#">Weddings</a></li>
+            <li><a href="#">Concerts</a></li>
+            <li><a href="#">College Fests</a></li>
+            <li><a href="#">Workshops</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li>📧 hello@happeningsalem.com</li>
+            <li>📞 +91 98765 43210</li>
+            <li>📍 123 Main Street, Salem, TN</li>
+          </ul>
         </div>
       </div>
-    </footer>
+      <div class="footer-bottom">
+        <p>Copyright © 2025 HappeningSalem. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Floating Chat Button -->
-    <!-- <button class="chat-button" aria-label="Chat with us">
+  <!-- Floating Chat Button -->
+  <!-- <button class="chat-button" aria-label="Chat with us">
       💬
     </button> -->
 
-    <!-- Notification Banner -->
-    <!-- <div class="notification-banner">
+  <!-- Notification Banner -->
+  <!-- <div class="notification-banner">
       <p>🔔 Get instant updates! <a href="#">Enable notifications</a></p>
       <button class="close-notification" aria-label="Close">✕</button>
     </div> -->
 
-    <script src="main.js" defer type="module"></script>
-    <script>
+  <script src="main.js" defer type="module"></script>
+  <script>
     // 🔍 Search Redirect
-    document.getElementById("eventSearchForm").addEventListener("submit", function(e) {
+    document.getElementById("eventSearchForm").addEventListener("submit", function (e) {
       e.preventDefault();
       const location = document.getElementById("searchLocation").value.trim().toLowerCase();
       const date = document.getElementById("searchDate").value;
@@ -538,5 +552,6 @@
       });
     });
   </script>
-  </body>
+</body>
+
 </html>

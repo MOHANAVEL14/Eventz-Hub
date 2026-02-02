@@ -9,7 +9,8 @@ body{
 	background: linear-gradient(to bottom, #f8fdfd,white, #f8fdfd);
 }
 .main{
-	width: 350px;
+	width: 90%;
+    max-width: 350px;
 	height: 500px;
 	background: red;
 	overflow: hidden;
@@ -135,4 +136,10 @@ button{
     border-radius: 5px;
     transition: .2s ease-in;
     cursor: pointer;
+}
+
+/* Responsive override */
+.main {
+    width: 90%;
+    max-width: 350px;
 }

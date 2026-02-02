@@ -212,8 +212,13 @@ a:hover {
     .hero-section {
         flex-direction: column; /* Stack items vertically */
         text-align: center;
+        padding: 40px 5%; /* Reduced padding */
     }
     
+    .hero-text h1 {
+        font-size: 2.2em; /* Smaller heading */
+    }
+
     .hero-image-placeholder {
         margin-top: 40px;
         width: 150px;
@@ -222,10 +227,11 @@ a:hover {
 
     .features-flex-container {
         flex-direction: column; /* Stack feature cards vertically */
+        gap: 20px;
     }
 
     .feature-card {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
     }
 }
 /* New Style for the Image inside the Placeholder */

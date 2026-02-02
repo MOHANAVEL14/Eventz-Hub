@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Slide Navbar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="login.css">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-	<div class="main">  	
+	<div class="main">
 		<input type="checkbox" id="chk" aria-hidden="true">
 
-			<div class="signup">
-				<form>
-					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" id="sname" value="" required="">
-					<input type="email" name="email" placeholder="Email" id="semail" value="" required="">
-					<input type="password" name="pswd" placeholder="Password" id="spassword" required="">
-					<button id="signupBtn">Sign up</button>
-				</form>
-			</div>
+		<div class="signup">
+			<form autocomplete="off">
+				<label for="chk" aria-hidden="true">Sign up</label>
+				<input type="text" name="txt" placeholder="User name" id="sname" value="" required=""
+					autocomplete="off">
+				<input type="email" name="email" placeholder="Email" id="semail" value="" required=""
+					autocomplete="off">
+				<input type="password" name="pswd" placeholder="Password" id="spassword" required=""
+					autocomplete="new-password">
+				<button id="signupBtn">Sign up</button>
+			</form>
+		</div>
 
-			<div class="login" action="../dashboard/index.html">
-				<form>
-					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" id="lemail" placeholder="Email" value="" required="">
-					<input type="password" name="pswd" id="lpassword" placeholder="Password" value="" required="">
-					<button type="submit" id="submitlogin">Login</button>
-                    <p id="do">Don't have an account?</p>
-                    <button type="button" id="googleBtn">
-                        <i class="fab fa-google"></i>Login with Google</button>
-				</form>
-			</div>
+		<div class="login" action="../dashboard/index.html">
+			<form autocomplete="off">
+				<label for="chk" aria-hidden="true">Login</label>
+				<input type="email" name="email" id="lemail" placeholder="Email" value="" required=""
+					autocomplete="off">
+				<input type="password" name="pswd" id="lpassword" placeholder="Password" value="" required=""
+					autocomplete="new-password">
+				<button type="submit" id="submitlogin">Login</button>
+				<p id="do">Don't have an account?</p>
+				<button type="button" id="googleBtn">
+					<i class="fab fa-google"></i>Login with Google</button>
+			</form>
+		</div>
 	</div>
-    <script src="main.js" defer type="module"></script>
+	<script src="main.js" defer type="module"></script>
 </body>
+
 </html>

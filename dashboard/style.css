@@ -270,6 +270,15 @@ body:not(.dark-mode) .theme-toggle .sun {
   animation: fadeInUp 0.8s ease;
 }
 
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.25rem; /* Smaller font on mobile */
+  }
+  .section {
+    padding: 40px 0; /* Reduced padding */
+  }
+}
+
 .hero-subtitle {
   font-size: 1.25rem;
   margin-bottom: 48px;
@@ -411,6 +420,12 @@ body:not(.dark-mode) .theme-toggle .sun {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
+}
+
+@media (max-width: 480px) {
+  .events-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+  }
 }
 
 .event-card {

@@ -13,6 +13,7 @@ import {
     ref, 
     getDownloadURL 
 } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-storage.js";
+import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
 
 
 // 🛑 IMPORTANT: Replace with your actual Firebase configuration
@@ -27,6 +28,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app); 
 
@@ -226,3 +228,19 @@ const initMenu = () => {
 };
 
 initMenu();
+initLogout();
+
+function initLogout() {
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            signOut(auth).then(() => {
+                window.location.href = "../login/login.html";
+            }).catch((error) => {
+                console.error("Logout error:", error);
+                alert("Failed to log out.");
+            });
+        });
+    }
+}
